@@ -8,12 +8,10 @@ const mongoose = require('./database/mongoose')
 
 
 const fetch = require("node-fetch");
-// const data = require('./data');
 const FiveStar = require('./data/5star')
 const getTwitchStream = require('./Twitch-commands/getStream')
 const getTwitchUser = require('./Twitch-commands/getUser')
 
-// mongoose.init()
 
 
 client.login(process.env.TOKEN)
@@ -27,65 +25,6 @@ client.on('ready',() => {
     // console.log(GetRandom());
     // console.log(data[0])
 })
-
-// client.on('message', message => {
-//     var user = message.member.user;
-//     if(message.content === '!roll'){
-//         const embed = createEmbed({
-//             author: user, 
-//             color: 0xFFFAF0, 
-//             description:`Brace yourselves. <@${user.id}> is rolling...`, 
-//             footer: `Prototype bot built by Xavier`, 
-//             image: 'https://media.tenor.com/images/fd153ad251600052ddaee51f90aee8de/tenor.gif'
-//          });
-
-//          const embed2 = createEmbed({
-//              author: user,
-//              color: 0xFFFAF0,
-//              description: `<@${user.id}> rolled ${GetRandom(80)}!`,
-//              footer: `Prototype bot built by Xavier`,
-//              image: 'https://media.tenor.com/images/fd153ad251600052ddaee51f90aee8de/tenor.gif'
-//          })
-//          message.channel.send({ embed: embed }).then((msg) => {
-//             setTimeout(function () {
-//                 msg.edit(embed2);
-//             }, 1000)
-//         })
-
-   
-//         // sendEmbed(client, message.channel.id, embed, ['1️⃣', '2️⃣', '3️⃣'])        
-//     //    message.channel.send(embed);
-//     }
-
-//     if(message.content === '!trivia')  {
-
-
-//        GetTrivia().then(response =>  {
-
-
-//             const embed = createEmbed({
-//             author: user, 
-//             color: 0xFFFAF0,
-//             description: ` ${response}`,
-//             footer: `Prototype bot built by Xavier`,
-//             image: 'https://media.tenor.com/images/fd153ad251600052ddaee51f90aee8de/tenor.gif'
-//         })
-//         message.channel.send(embed)
-
-//        })
-
-
-//     //    var test =  GetTrivia().then((response) => console.log(response));
-//         // const embed = createEmbed({
-//         //     author: user, 
-//         //     color: 0xFFFAF0,
-//         //     description: ` ${GetTrivia().then((response) => {return response})} test`,
-//         //     footer: `Prototype bot built by Xavier`,
-//         //     image: 'https://media.tenor.com/images/fd153ad251600052ddaee51f90aee8de/tenor.gif'
-//         // })
-//         // message.channel.send(embed)
-//     }
-// })
 
 
 
@@ -167,7 +106,6 @@ const addTwitch = async(message,username) => {
         .setThumbnail(userData.data[0].profile_image_url)
         .setImage(image)
         .setFooter(`Playing : ${streamData.data[0].game_name}`)
-        // .setDescription(`**Playing** : ${streamData.data[0].game_name}`);
         message.channel.send(embed)    
     }
 
@@ -366,23 +304,6 @@ const GetRandom = (max) => {
     .catch(error => console.warn(error))
 }
 
-
-client.on('message', message => {
-    var user = message.member.user;
-    var dooto = 842169106643550249;
-    // console.log(user);
-    if(message.content === 'XVbeans'){
-        const embed = new Discord.MessageEmbed()
-
-        .setColor(0x000000)
-
-        .setDescription(`Beans are great, <@161257113903955968>  loves beans`)
-        .setFooter('eat bans')
-        message.channel.send(embed);
-
-        
-    }
-})
 
 
 
