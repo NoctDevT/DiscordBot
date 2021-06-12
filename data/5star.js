@@ -90,17 +90,7 @@ module.exports = [
             }
         
     },   
-     {
-        "CardDetails": 
-            {
-                "Name": "Stella Vermillion",
-                "Stars": "⭐⭐⭐⭐⭐",
-                "condition": "Rare - Swimsuit edition",
-                "image": "https://us.rule34.xxx//images/3824/40714e58b7422dabe98997f688717a9c.gif?4327890",
-                "ID": "1"
-            }
-        
-    },    
+
     //{
     //     "CardDetails": 
     //         {
