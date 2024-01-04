@@ -20,10 +20,6 @@ client.login(process.env.TOKEN)
 
 client.on('ready',() => {
     mongoose.init()
-    // console.log(mongoose)
-    // client.channels.cache.get('general').send('Hello here!')
-    // console.log(GetRandom());
-    // console.log(data[0])
 })
 
 
@@ -39,9 +35,6 @@ client.on('message', message => {
 
 const commandHandler = async(prefix, user, message) => {
     const SpltString = message.content.toLowerCase().split(' ') 
-
-    // const cmdWord = firstWord.slice(0, prefix.length)
-
     switch(SpltString[0]) {
         case `${prefix}roll`:
              if( await userExists(user) !== true) { 
@@ -114,14 +107,6 @@ const addTwitch = async(message,username) => {
     }, 650000)
 }
 
-
-
-
-
-
-
-
-
 const testerFunction = async({user, message}) => {
     // var test = await mongoose.inserUserCard(user);
     let inventory = []; 
@@ -156,7 +141,7 @@ const Register = async({user, message}) => {
     .setFooter(`Prototype bot built by Xavier`)
     .setImage('https://media.tenor.com/images/fd153ad251600052ddaee51f90aee8de/tenor.gif')
     .setFooter('Prototype bot built by Xavier', 'https://media.tenor.com/images/204011a96ba3ca3648e3ae15ea444212/tenor.gif')
-    .setDescription(isRegistered ? `<@${user.id}> is now registered to Atlas` : `You are already registered you sussy baka`);
+    .setDescription(isRegistered ? `<@${user.id}> is now registered to Atlas` : `You are already registered`);
     message.channel.send(embed)
 }
 
@@ -276,18 +261,6 @@ const createEmbed = ({author, color, description, footer, image}) => {
 const GenerateRoll = () => {
     var rollGen = GetRandom(100);
     return FiveStar
-
-    // console.log(FiveStar[0].CardDetails.image)
-
-
-
-    // if(rollGen < 10) return FiveStar[0]
-    // if(rollGen < 20) return "4 star"
-    // if(rollGen < 30) return "3 star"
-    // if(rollGen < 40) return "2 star"
-    //  return "1 star"
-
-
 }
 
 
@@ -304,16 +277,3 @@ const GetRandom = (max) => {
     .catch(error => console.warn(error))
 }
 
-
-
-
-
-
-
-
-        // const embed = new Discord.MessageEmbed()
-        // .setAuthor(`@${user.tag}` ,user.avatarURL())
-        // .setColor(0xFFFAF0)
-        // .setDescription(`Brace yourselves. <@${user.id}> is rolling...`)
-        // .setFooter(`Prototype bot built by Xavier`)
-        // .setImage('https://media.tenor.com/images/fd153ad251600052ddaee51f90aee8de/tenor.gif')
